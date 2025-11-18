@@ -1,0 +1,182 @@
+[
+    {
+        "id": 1,
+        "command": "time"
+    },
+    {
+        "id": 2,
+        "command": "date"
+    },
+    {
+        "id": 3,
+        "command": "history"
+    },
+    {
+        "id": 4,
+        "command": "exit"
+    },
+    {
+        "id": 5,
+        "command": "whoami"
+    },
+    {
+        "id": 6,
+        "command": "exit"
+    },
+    {
+        "id": 7,
+        "command": "sleep 1"
+    },
+    {
+        "id": 8,
+        "command": "exit"
+    },
+    {
+        "id": 9,
+        "command": "sleep -m 100"
+    },
+    {
+        "id": 10,
+        "command": "exit"
+    },
+    {
+        "id": 11,
+        "command": "timer -m 500"
+    },
+    {
+        "id": 12,
+        "command": "timer 2 -msg \"Yes!\""
+    },
+    {
+        "id": 13,
+        "command": "exit"
+    },
+    {
+        "id": 14,
+        "command": "help"
+    },
+    {
+        "id": 15,
+        "command": "help"
+    },
+    {
+        "id": 16,
+        "command": "exit"
+    },
+    {
+        "id": 17,
+        "command": "clear"
+    },
+    {
+        "id": 18,
+        "command": "clear"
+    },
+    {
+        "id": 19,
+        "command": "exit"
+    },
+    {
+        "id": 20,
+        "command": "clear"
+    },
+    {
+        "id": 21,
+        "command": "clear"
+    },
+    {
+        "id": 22,
+        "command": "exit"
+    },
+    {
+        "id": 23,
+        "command": "123"
+    },
+    {
+        "id": 24,
+        "command": "ip"
+    },
+    {
+        "id": 25,
+        "command": "ip"
+    },
+    {
+        "id": 26,
+        "command": "ip"
+    },
+    {
+        "id": 27,
+        "command": "exit"
+    },
+    {
+        "id": 28,
+        "command": "open note.txt"
+    },
+    {
+        "id": 29,
+        "command": "open note.txt"
+    },
+    {
+        "id": 30,
+        "command": "open note.txt --lines 10-20"
+    },
+    {
+        "id": 31,
+        "command": "exit"
+    },
+    {
+        "id": 32,
+        "command": "time"
+    },
+    {
+        "id": 33,
+        "command": "ip"
+    },
+    {
+        "id": 34,
+        "command": "uptime"
+    },
+    {
+        "id": 35,
+        "command": "exit"
+    },
+    {
+        "id": 36,
+        "command": "color"
+    },
+    {
+        "id": 37,
+        "command": "color red"
+    },
+    {
+        "id": 38,
+        "command": "color blue"
+    },
+    {
+        "id": 39,
+        "command": "/usr/bin/python /home/andriy/Hexer/Hexer/main.py"
+    },
+    {
+        "id": 40,
+        "command": "color"
+    },
+    {
+        "id": 41,
+        "command": "color blue"
+    },
+    {
+        "id": 42,
+        "command": "time"
+    },
+    {
+        "id": 43,
+        "command": "uptime"
+    },
+    {
+        "id": 44,
+        "command": "timer 1"
+    },
+    {
+        "id": 45,
+        "command": "exit"
+    }
+]
