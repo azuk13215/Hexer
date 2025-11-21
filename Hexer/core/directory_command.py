@@ -11,12 +11,21 @@ def fileApp(cmd: str):
     command = parts[0].lower()
     args = parts[1:]
 
+    def check_help(command, args):
+        from core.help_command import COMMAND_HELP_DICT
+        if "--help" in args or "-h" in args:
+            if command in COMMAND_HELP_DICT:
+                return ("info", f"Help for '{command}': \n{COMMAND_HELP_DICT[command]}", os.getcwd())
+            else:
+                return ("error", f"No help available for '{command}'")
+
     # --- mkdir command ---
     if command == "mkdir":
         if len(args) == 0:
             return ("error", "Specify the directory name", os.getcwd())
+
         folder_name = args[0]
-        try:
+        try:            
             os.mkdir(folder_name)
             return ("success", f"Directory '{folder_name}' created", os.getcwd())
         

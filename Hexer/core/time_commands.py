@@ -11,6 +11,14 @@ def timeApp(cmd: str, start_time=None):
     command = parts[0].lower()
     args = parts[1:]
 
+    def check_help(command, args):
+        from core.help_command import COMMAND_HELP_DICT
+        if "--help" in args or "-h" in args:
+            if command in COMMAND_HELP_DICT:
+                return ("info", f"Help for '{command}': \n{COMMAND_HELP_DICT[command]}", os.getcwd())
+            else:
+                return ("error", f"No help available for '{command}'")
+
     # --- sleep ---
     if command == "sleep":
         import time

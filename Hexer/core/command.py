@@ -1,11 +1,9 @@
 import os
 import time
-import datetime
-import getpass
 from core.directory_command import fileApp
 from core.sytems_commads import sysApp
 from core.time_commands import timeApp
-from core.help_command import helpApp
+from core.help_command import helpApp, COMMAND_HELP_DICT
 from core.network_commands import netApp
 
 class Hexer:
@@ -14,9 +12,22 @@ class Hexer:
         parts = cmd.strip().split()
         if not parts:
             return ("info", "", os.getcwd())
-
+        
         command = parts[0].lower()
         args = parts[1:]
+
+        # --- GLOBAL HELP FLAG HANLER ---
+
+        # If user wrote: <command> --help OR -h
+        if "--help" in args or "-h" in args:
+
+            # lowercase command key
+            key = command.lower()
+            if key in COMMAND_HELP_DICT:
+                return ("info", f"{key}: {COMMAND_HELP_DICT[key]}", os.getcwd())
+            else:
+                return ("error", f"No help available for '{command}'", os.getcwd())
+
         result_file = fileApp(cmd)
         if result_file is not None:
             return result_file
@@ -43,7 +54,7 @@ class Hexer:
 
         command = parts[0].lower()
         args = parts[1:]
-    
+
     def run():
         start_time = time.time()
         while True:

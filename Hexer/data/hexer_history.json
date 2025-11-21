@@ -178,5 +178,25 @@
     {
         "id": 45,
         "command": "exit"
+    },
+    {
+        "id": 46,
+        "command": "exit"
+    },
+    {
+        "id": 47,
+        "command": "/usr/sbin/python3 /home/andriy/Hexer/Hexer/main.py"
+    },
+    {
+        "id": 48,
+        "command": "exit"
+    },
+    {
+        "id": 49,
+        "command": "/usr/sbin/python3 /home/andriy/Hexer/Hexer/main.py"
+    },
+    {
+        "id": 50,
+        "command": "exit"
     }
 ]
