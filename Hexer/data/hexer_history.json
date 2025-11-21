@@ -198,5 +198,57 @@
     {
         "id": 50,
         "command": "exit"
+    },
+    {
+        "id": 51,
+        "command": "/usr/bin/python /home/andriy/Hexer/Hexer/main.py"
+    },
+    {
+        "id": 52,
+        "command": "exit"
+    },
+    {
+        "id": 53,
+        "command": "sugo"
+    },
+    {
+        "id": 54,
+        "command": "eytrn"
+    },
+    {
+        "id": 55,
+        "command": "sf'n;,r'nl;,"
+    },
+    {
+        "id": 56,
+        "command": "etyn"
+    },
+    {
+        "id": 57,
+        "command": "wretbmrw[tom[mb[iomq"
+    },
+    {
+        "id": 58,
+        "command": "ip"
+    },
+    {
+        "id": 59,
+        "command": "exit"
+    },
+    {
+        "id": 60,
+        "command": "exit"
+    },
+    {
+        "id": 61,
+        "command": "exit -t"
+    },
+    {
+        "id": 62,
+        "command": "exit -t y"
+    },
+    {
+        "id": 63,
+        "command": "exit -t 2"
     }
 ]

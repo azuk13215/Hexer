@@ -106,6 +106,20 @@ def timeApp(cmd: str, start_time=None):
         return ("info", f"Uptime: {h:02d}:{m:02d}:{s:02d}", os.getcwd())
     
     if command == "exit":
-        return ("exit", "Exiting...", os.getcwd())
+        import time
+        if not args:
+            return ("exit", "Exiting...", os.getcwd())
+        
+        if args[0] == "-t":
+            if len(args) < 2:
+                return ("error", "after '-t' you need to specify the number of seconds", os.getcwd())
+            
+            try:
+                delay = int(args[1])
+            except ValueError:
+                return ("error", "time must be a number", os.getcwd())
+            
+            time.sleep(delay)
+            return ("exit", "Exiting...", os.getcwd())
         
     return None
