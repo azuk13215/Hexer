@@ -110,12 +110,21 @@ def timeApp(cmd: str, start_time=None):
         if not args:
             return ("exit", "Exiting...", os.getcwd())
         
-        if args[0] == "-t":
+        flag = args[0]
+        if flag == "-t":
             if len(args) < 2:
                 return ("error", "after '-t' you need to specify the number of seconds", os.getcwd())
             
             try:
                 delay = int(args[1])
+            except ValueError:
+                return ("error", "time must be a number", os.getcwd())
+        
+        if flag == "-tm":
+            if len(args) < 2:
+                return ("error", "after '-tm' you need to specify the number of milliseconds", os.getcwd())
+            try:
+                delay = int(args[1]) / 1000.0
             except ValueError:
                 return ("error", "time must be a number", os.getcwd())
             

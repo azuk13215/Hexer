@@ -250,5 +250,29 @@
     {
         "id": 63,
         "command": "exit -t 2"
+    },
+    {
+        "id": 64,
+        "command": "/usr/bin/python /home/andriy/Hexer/Hexer/main.py"
+    },
+    {
+        "id": 65,
+        "command": "exit -t 5"
+    },
+    {
+        "id": 66,
+        "command": "date"
+    },
+    {
+        "id": 67,
+        "command": "wwww"
+    },
+    {
+        "id": 68,
+        "command": "exit -tm 100"
+    },
+    {
+        "id": 69,
+        "command": "exit -tm 300"
     }
 ]
