@@ -274,5 +274,97 @@
     {
         "id": 69,
         "command": "exit -tm 300"
+    },
+    {
+        "id": 70,
+        "command": "rm -r /home/andriy/Folder"
+    },
+    {
+        "id": 71,
+        "command": "sysinfo"
+    },
+    {
+        "id": 72,
+        "command": "exit -t 5"
+    },
+    {
+        "id": 73,
+        "command": "ip"
+    },
+    {
+        "id": 74,
+        "command": "tree"
+    },
+    {
+        "id": 75,
+        "command": "exit"
+    },
+    {
+        "id": 76,
+        "command": "tree"
+    },
+    {
+        "id": 77,
+        "command": "tree"
+    },
+    {
+        "id": 78,
+        "command": "tree"
+    },
+    {
+        "id": 79,
+        "command": "ip"
+    },
+    {
+        "id": 80,
+        "command": "sysinfo"
+    },
+    {
+        "id": 81,
+        "command": "exit"
+    },
+    {
+        "id": 82,
+        "command": "sysinfo"
+    },
+    {
+        "id": 83,
+        "command": "sysinfo"
+    },
+    {
+        "id": 84,
+        "command": "sysinfo"
+    },
+    {
+        "id": 85,
+        "command": "EXIT"
+    },
+    {
+        "id": 86,
+        "command": "sysinfo"
+    },
+    {
+        "id": 87,
+        "command": "exit"
+    },
+    {
+        "id": 88,
+        "command": "sysinfo"
+    },
+    {
+        "id": 89,
+        "command": "exit"
+    },
+    {
+        "id": 90,
+        "command": "sysinfo"
+    },
+    {
+        "id": 91,
+        "command": "sysinfo --ram"
+    },
+    {
+        "id": 92,
+        "command": "exit -t 1"
     }
 ]

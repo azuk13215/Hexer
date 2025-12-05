@@ -87,20 +87,52 @@ def sysApp(cmd: str):
             import psutil
 
             info = []
-            info.append(f"OS: {platform.system()} {platform.release()}")
-            info.append(f"Machine: {platform.machine()}")
-            info.append(f"Processor: {platform.processor()}")
-            info.append(f"Python: {platform.python_version()}")
-            info.append(f"CPU cores: {psutil.cpu_count(logical=True)} logical / {psutil.cpu_count(logical=False)} physical")
 
-            ram = psutil.virtual_memory()
-            info.append(f"RAM: {round(ram.total / (1024**3), 2)} GB")
+            # Если аргументов нет — полный вывод
+            if not args:
+                info.append(f"OS: {platform.system()} {platform.release()}")
+                info.append(f"Machine: {platform.machine()}")
+                info.append(f"Processor: {platform.processor()}")
+                info.append(f"Python: {platform.python_version()}")
+                info.append(
+                    f"CPU cores: {psutil.cpu_count(logical=True)} logical / "
+                    f"{psutil.cpu_count(logical=False)} physical"
+                )
 
-            result = "\n".join(info)
-            return ("info", result, os.getcwd())
-        
+                ram = psutil.virtual_memory()
+                info.append(f"RAM: {round(ram.total / (1024**3), 2)} GB")
+
+                return ("info", "\n".join(info), os.getcwd())
+
+            # Если аргумент есть — читаем первый флаг
+            flag = args[0]
+
+            # OS only
+            if flag == "--os":
+                info.append(f"OS: {platform.system()} {platform.release()}")
+                return ("info", "\n".join(info), os.getcwd())
+
+            # CPU only
+            if flag == "--cpu":
+                info.append(
+                    f"CPU cores: {psutil.cpu_count(logical=True)} logical / "
+                    f"{psutil.cpu_count(logical=False)} physical"
+                )
+                info.append(f"Processor: {platform.processor()}")
+                return ("info", "\n".join(info), os.getcwd())
+
+            # RAM only
+            if flag == "--ram":
+                ram = psutil.virtual_memory()
+                info.append(f"RAM: {round(ram.total / (1024**3), 2)} GB")
+                return ("info", "\n".join(info), os.getcwd())
+
+            # Unknown flag
+            return ("error", f"Unknown flag: {flag}", os.getcwd())
+
         except Exception as e:
             return ("error", f"Error: {e}", os.getcwd())
+
         
     # --- cwd ---
     if command == "cwd":
@@ -161,6 +193,5 @@ def sysApp(cmd: str):
         except Exception:
             user = os.getenv("USER", "unknown")
         return ("info", f"Current user: {user}", os.getcwd())
-
 
     return None
