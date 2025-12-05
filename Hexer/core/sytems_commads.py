@@ -88,7 +88,6 @@ def sysApp(cmd: str):
 
             info = []
 
-            # Если аргументов нет — полный вывод
             if not args:
                 info.append(f"OS: {platform.system()} {platform.release()}")
                 info.append(f"Machine: {platform.machine()}")
@@ -104,7 +103,6 @@ def sysApp(cmd: str):
 
                 return ("info", "\n".join(info), os.getcwd())
 
-            # Если аргумент есть — читаем первый флаг
             flag = args[0]
 
             # OS only
