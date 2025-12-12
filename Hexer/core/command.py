@@ -5,6 +5,7 @@ from core.sytems_commads import sysApp
 from core.time_commands import timeApp
 from core.help_command import helpApp, COMMAND_HELP_DICT
 from core.network_commands import netApp
+from core.setting_commands import settingApp
 
 class Hexer:
     @staticmethod
@@ -47,6 +48,10 @@ class Hexer:
         result_net = netApp(cmd)
         if result_net is not None:
             return result_net
+        
+        result_setting = settingApp(cmd)
+        if result_setting is not None:
+            return result_setting
 
         parts = cmd.strip().split()
         if not parts:
@@ -55,10 +60,13 @@ class Hexer:
         command = parts[0].lower()
         args = parts[1:]
 
+        return ("error", f"Unknown command: {command}", os.getcwd())
+
     def run():
         start_time = time.time()
         while True:
             cmd = input(f"{os.getcwd()} -> ")
+
             tag, message, cwd = Hexer.handle_command(cmd, start_time)
             print(message)
         

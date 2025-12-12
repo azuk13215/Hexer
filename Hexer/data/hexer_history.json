@@ -366,5 +366,237 @@
     {
         "id": 92,
         "command": "exit -t 1"
+    },
+    {
+        "id": 93,
+        "command": "ping -c 4 google.com"
+    },
+    {
+        "id": 94,
+        "command": "ping google.com"
+    },
+    {
+        "id": 95,
+        "command": "exit"
+    },
+    {
+        "id": 96,
+        "command": "sysinfo"
+    },
+    {
+        "id": 97,
+        "command": "exit"
+    },
+    {
+        "id": 98,
+        "command": "wallpaper /home/andriy/\u041a\u0430\u0440\u0442\u0438\u043d\u043a\u0438/A-futuristic-cyberpunk-city-skyline-perfect-for-8K-PC-desktop-backgrounds.webp"
+    },
+    {
+        "id": 99,
+        "command": "wallpaper  /home/andriy/\u041a\u0430\u0440\u0442\u0438\u043d\u043a\u0438/wallpapersden.com_escape-hd-minimal-cool_1920x1080.jpg"
+    },
+    {
+        "id": 100,
+        "command": "exit"
+    },
+    {
+        "id": 101,
+        "command": "wallpaper --get"
+    },
+    {
+        "id": 102,
+        "command": "wallpaper /home/andriy/\u041a\u0430\u0440\u0442\u0438\u043d\u043a\u0438/wallpapersden.com_escape-hd-minimal-cool_1920x1080.jpg"
+    },
+    {
+        "id": 103,
+        "command": "wallpaper --get"
+    },
+    {
+        "id": 104,
+        "command": "wallpaper --history"
+    },
+    {
+        "id": 105,
+        "command": "exit"
+    },
+    {
+        "id": 106,
+        "command": "tree"
+    },
+    {
+        "id": 107,
+        "command": "exit"
+    },
+    {
+        "id": 108,
+        "command": "tree"
+    },
+    {
+        "id": 109,
+        "command": "exit"
+    },
+    {
+        "id": 110,
+        "command": "tree"
+    },
+    {
+        "id": 111,
+        "command": "sysinfo"
+    },
+    {
+        "id": 112,
+        "command": "exit"
+    },
+    {
+        "id": 113,
+        "command": "exit"
+    },
+    {
+        "id": 114,
+        "command": "sysinfo"
+    },
+    {
+        "id": 115,
+        "command": "cwd"
+    },
+    {
+        "id": 116,
+        "command": "tr"
+    },
+    {
+        "id": 117,
+        "command": "re"
+    },
+    {
+        "id": 118,
+        "command": "tree"
+    },
+    {
+        "id": 119,
+        "command": "exit"
+    },
+    {
+        "id": 120,
+        "command": "volumeinfo"
+    },
+    {
+        "id": 121,
+        "command": "volumeinfo"
+    },
+    {
+        "id": 122,
+        "command": "exit"
+    },
+    {
+        "id": 123,
+        "command": "lang"
+    },
+    {
+        "id": 124,
+        "command": "lang"
+    },
+    {
+        "id": 125,
+        "command": "lang"
+    },
+    {
+        "id": 126,
+        "command": "lang"
+    },
+    {
+        "id": 127,
+        "command": "lang"
+    },
+    {
+        "id": 128,
+        "command": "lang"
+    },
+    {
+        "id": 129,
+        "command": "lang -s "
+    },
+    {
+        "id": 130,
+        "command": "lang -s ru"
+    },
+    {
+        "id": 131,
+        "command": "exit"
+    },
+    {
+        "id": 132,
+        "command": "lang"
+    },
+    {
+        "id": 133,
+        "command": "lang -s"
+    },
+    {
+        "id": 134,
+        "command": "lang   "
+    },
+    {
+        "id": 135,
+        "command": "qertgeq"
+    },
+    {
+        "id": 136,
+        "command": "bluetooth"
+    },
+    {
+        "id": 137,
+        "command": "bluetooth on"
+    },
+    {
+        "id": 138,
+        "command": "exit"
+    },
+    {
+        "id": 139,
+        "command": "date"
+    },
+    {
+        "id": 140,
+        "command": "exit -t"
+    },
+    {
+        "id": 141,
+        "command": "exit -t 5"
+    },
+    {
+        "id": 142,
+        "command": "qergqergnm"
+    },
+    {
+        "id": 143,
+        "command": "wbohbwef"
+    },
+    {
+        "id": 144,
+        "command": "wipenjipjwneguiohwegiub"
+    },
+    {
+        "id": 145,
+        "command": "exit -t 1"
+    },
+    {
+        "id": 146,
+        "command": "exit"
+    },
+    {
+        "id": 147,
+        "command": "exit -t 1"
+    },
+    {
+        "id": 148,
+        "command": "exit"
+    },
+    {
+        "id": 149,
+        "command": "exit -t 1"
+    },
+    {
+        "id": 150,
+        "command": "exit"
     }
 ]

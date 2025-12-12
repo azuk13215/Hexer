@@ -107,6 +107,7 @@ def timeApp(cmd: str, start_time=None):
     
     if command == "exit":
         import time
+
         if not args:
             return ("exit", "Exiting...", os.getcwd())
         
