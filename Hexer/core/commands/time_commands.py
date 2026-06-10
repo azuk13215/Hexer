@@ -1,7 +1,6 @@
 import time
 import os
 import datetime
-import requests
 
 def timeApp(cmd: str, start_time=None):
 

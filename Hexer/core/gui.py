@@ -6,11 +6,11 @@ from PyQt6.QtWidgets import (
     QVBoxLayout,
     QTextEdit,
     QLineEdit,
-    QLabel
+    QLabel,
 )
-from PyQt6.QtCore import Qt
-from PyQt6.QtGui import QFont
 
+from PyQt6.QtCore import Qt
+from PyQt6.QtGui import QFont, QIcon
 
 class HexerGUI(QWidget):
     def __init__(self):
@@ -20,6 +20,7 @@ class HexerGUI(QWidget):
         self.setGeometry(200, 200, 1000, 600)
 
         self.init_ui()
+        self.setWindowIcon(QIcon("/app/share/icons/hicolor/512x512/apps/com.teambasert.Hexer.png"))
 
     def init_ui(self):
         layout = QVBoxLayout()

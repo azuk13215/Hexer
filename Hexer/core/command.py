@@ -9,7 +9,6 @@ from core.commands.network_commands import netApp
 from core.commands.setting_commands import settingApp
 from core.commands.commands_for_w_memory import memoryApp
 
-
 class Hexer:
     @staticmethod
     def handle_command(cmd: str, start_time=None):
@@ -79,3 +78,4 @@ class Hexer:
 
             if tag == "exit":
                 break
+    

@@ -10,5 +10,17 @@
     {
         "id": 3,
         "command": "help"
+    },
+    {
+        "id": 4,
+        "command": "time"
+    },
+    {
+        "id": 5,
+        "command": "tree"
+    },
+    {
+        "id": 6,
+        "command": "shutdown"
     }
 ]

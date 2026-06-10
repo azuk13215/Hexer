@@ -3,6 +3,8 @@ import shlex
 import datetime
 import json
 import getpass
+import subprocess
+import time
 
 def sysApp(cmd: str):
     parts = shlex.split(cmd.strip())
@@ -191,5 +193,11 @@ def sysApp(cmd: str):
         except Exception:
             user = os.getenv("USER", "unknown")
         return ("info", f"Current user: {user}", os.getcwd())
+    
+    if command == "shutdown":
+        subprocess.run(["shutdown", "now"])
+    
+    if command == "reboot":
+        subprocess.run(["reboot"])
 
     return None
