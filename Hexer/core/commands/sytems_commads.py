@@ -195,9 +195,53 @@ def sysApp(cmd: str):
         return ("info", f"Current user: {user}", os.getcwd())
     
     if command == "shutdown":
-        subprocess.run(["shutdown", "now"])
-    
+        if not args:
+            subprocess.run(["shutdown", "now"])
+            return ("info", "Shutting down...", os.getcwd())
+
+        flag = args[0]
+
+        if flag == "-t":
+            if len(args) < 2:
+                return ("error", "after '-t' you need to specify the number of minutes", os.getcwd())
+
+            try:
+                delay = int(args[1])
+            except ValueError:
+                return ("error", "time must be a number", os.getcwd())
+
+            subprocess.run(["shutdown", f"+{delay}"])
+            return ("info", f"Shutdown scheduled in {delay} minute(s)", os.getcwd())
+
+        if flag == "-c":
+            subprocess.run(["shutdown", "-c"])
+            return ("info", "Shutdown cancelled", os.getcwd())
+
+        return ("error", f"Unknown flag '{flag}'", os.getcwd())
+
     if command == "reboot":
-        subprocess.run(["reboot"])
+        if not args:
+            subprocess.run(["reboot"])
+            return ("info", "Rebooting...", os.getcwd())
+    
+        flag = args[0]
+    
+        if flag == "-t":
+            if len(args) < 2:
+                return ("error", "after '-t' you need to specify the number of minutes", os.getcwd())
+    
+            try:
+                delay = int(args[1])
+            except ValueError:
+                return ("error", "time must be a number", os.getcwd())
+    
+            subprocess.run(["shutdown", "-r", f"+{delay}"])
+            return ("info", f"Reboot scheduled in {delay} minute(s)", os.getcwd())
+    
+        if flag == "-c":
+            subprocess.run(["shutdown", "-c"])
+            return ("info", "Reboot cancelled", os.getcwd())
+    
+        return ("error", f"Unknown flag '{flag}'", os.getcwd())
 
     return None

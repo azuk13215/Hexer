@@ -2,6 +2,7 @@ import os
 import time
 import shutil
 import shlex
+from pathlib import Path
 
 def fileApp(cmd: str):
     parts = shlex.split(cmd.strip())
@@ -476,5 +477,20 @@ def fileApp(cmd: str):
         # Defult: read full file
         # -------------------------
         return ("info", "".join(lines), os.getcwd())
-
+    
+    if command == "nfd":
+        if not args:
+            return ("error", "Usage: nfd <path>", os.getcwd())
+    
+        path = Path(args[0])
+    
+        if not path.exists():
+            return ("error", f"Path '{path}' does not exist", os.getcwd())
+    
+        if not path.is_dir():
+            return ("error", f"'{path}' is not a directory", os.getcwd())
+    
+        count = sum(1 for item in path.iterdir() if item.is_file())
+    
+        return ("info", f"Files: {count}", os.getcwd())
     return None

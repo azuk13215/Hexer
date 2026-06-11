@@ -22,5 +22,17 @@
     {
         "id": 6,
         "command": "shutdown"
+    },
+    {
+        "id": 7,
+        "command": "/home/andriy/Downloads/Prominence II Hasturian Era-v3.9.27/overrides/mods"
+    },
+    {
+        "id": 8,
+        "command": "clear"
+    },
+    {
+        "id": 9,
+        "command": "exit"
     }
 ]
