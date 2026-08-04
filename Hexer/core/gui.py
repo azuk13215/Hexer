@@ -1,5 +1,6 @@
 import sys
 from core.command import Hexer
+from binds.binds import BindsManager
 from PyQt6.QtWidgets import (
     QApplication,
     QWidget,
@@ -11,6 +12,23 @@ from PyQt6.QtWidgets import (
 
 from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QFont, QIcon
+
+
+class HistoryLineEdit(QLineEdit):
+    """Поле ввода, делегирующее обработку горячих клавиш в BindsManager."""
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self._binds = BindsManager(self)
+
+    def keyPressEvent(self, event):
+        # Горячие клавиши (стрелки, Enter) обрабатывает BindsManager.
+        # Если он вернул True — клавиша обработана, стандартную обработку пропускаем.
+        if self._binds.keyPressEvent(event):
+            return
+
+        # Остальные клавиши (Backspace и т.д.) — стандартное поведение.
+        super().keyPressEvent(event)
 
 class HexerGUI(QWidget):
     def __init__(self):
@@ -50,7 +68,7 @@ class HexerGUI(QWidget):
         self.terminal_output.append("Type 'help' to see commands.\n")
 
         # Input field
-        self.command_input = QLineEdit()
+        self.command_input = HistoryLineEdit()
         self.command_input.setFont(QFont("Consolas", 11))
         self.command_input.setStyleSheet(
             "background-color: #161b22;"
