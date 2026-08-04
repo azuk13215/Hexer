@@ -29,4 +29,4 @@ This project is licensed under the GNU GPL v3 License.
 
 # gui
 
-![Hexer Screenshot](/assets/Hexer_terminal_gui.png)
+![Hexer Screenshot](/assets/NewHexerGui.png)

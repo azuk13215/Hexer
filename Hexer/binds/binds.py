@@ -5,10 +5,10 @@ from PyQt6.QtCore import Qt
 
 
 class BindsManager:
-    """Управление горячими клавишами и навигацией по истории команд.
+    """Manage hotkeys and navigate through command history.
 
-    Содержит логику обработки стрелок вверх/вниз и Enter в поле ввода.
-    Состояние и логика перенесены из HistoryLineEdit (core/gui.py).
+    Contains logic for handling up/down arrows and Enter in an input field.
+    State and logic moved from HistoryLineEdit (core/gui.py).
     """
 
     HISTORY_FILE = os.path.expanduser(
@@ -18,23 +18,23 @@ class BindsManager:
     def __init__(self, widget):
         self.widget = widget
 
-        # Список команд истории: от самой старой к самой новой.
-        # Берём те же данные, что пишутся в JSON (формат: список {id, command}).
+        # List of command history: from the oldest to the newest.
+        # We take the same data that is written to JSON (format: list {id, command}).
         self._history = self._load_history()
 
-        # Индекс текущей позиции. len(_history) — "новая" позиция (пустое поле),
-        # от которой пользователь начинает листать историю.
+        # Index of the current position. len(_history) — "new" position (empty field),
+        # from which the user starts browsing the history.
         self._history_index = len(self._history)
 
-        # Черновик: текст, который пользователь начал печатать до листания.
+        # Draft: text that the user has started typing before browsing the history.
         self._draft = ""
 
     def _load_history(self):
-        """Читает историю из того же JSON-файла, что использует остальной код."""
+        """Loads the history from the same JSON file that the rest of the code uses."""
         try:
             with open(self.HISTORY_FILE, "r", encoding="utf-8") as f:
                 data = json.load(f)
-            # Данные — список объектов {id, command}; извлекаем только команды.
+            # Data is a list of {id, command} objects; we extract only commands.
             commands = []
             for item in data:
                 cmd = item.get("command") if isinstance(item, dict) else item
@@ -45,15 +45,14 @@ class BindsManager:
             return []
 
     def _apply_text(self, text):
-        """Подставляет команду в поле и ставит курсор в конец."""
-        self.widget.setText(text)
-        self.widget.setCursorPosition(len(text))
+        """Inserts the command into the widget's input line (cursor at the end)."""
+        self.widget.set_input_text(text)
 
     def keyPressEvent(self, event):
-        """Обрабатывает горячую клавишу.
+        """Handles the hotkey.
 
-        Возвращает True, если клавиша обработана и дальше передавать не нужно,
-        иначе False — чтобы виджет обработал её стандартно (например, Enter).
+        Returns True if the key is processed and should not be passed further,
+        otherwise False - so that the widget processes it in the standard way (for example, Enter).
         """
         key = event.key()
 
@@ -64,44 +63,44 @@ class BindsManager:
             self._navigate_newer()
             return True
         if key in (Qt.Key.Key_Return, Qt.Key.Key_Enter):
-            # Команда выполнена — сбрасываем навигацию в начальное состояние.
+            # The command has been executed - we reset the navigation to its initial state.
             self._reset_navigation()
 
         return False
 
     def _navigate_older(self):
-        """Стрелка вверх: предыдущая (более старая) команда из истории."""
+        """Arrow up: previous (older) command from the history."""
         if not self._history:
             return
 
         if self._history_index == len(self._history):
-            # Только начинаем листать — запоминаем текущий черновик.
-            self._draft = self.widget.text()
+            # Only starting to browse — remember the current draft.
+            self._draft = self.widget.get_input_text()
             self._history_index -= 1
         elif self._history_index > 0:
             self._history_index -= 1
         else:
-            return  # уже на самой старой команде
+            return  # already on the oldest command
 
         self._apply_text(self._history[self._history_index])
 
     def _navigate_newer(self):
-        """Стрелка вниз: более новая команда; в конце — черновик / пустое поле."""
+        """Arrow down: more recent command; at the end — draft / empty field."""
         if self._history_index == len(self._history):
-            return  # уже в конце, дальше некуда
+            return  # already at the end, nowhere to go
 
         self._history_index += 1
 
         if self._history_index == len(self._history):
-            # Дошли до конца истории — восстанавливаем черновик.
+            # Reached the end of the history — restore the draft.
             draft, self._draft = self._draft, ""
             self._apply_text(draft)
         else:
             self._apply_text(self._history[self._history_index])
 
     def _reset_navigation(self):
-        """Возвращает навигацию в начальное состояние после выполнения команды."""
-        # Перечитываем историю, чтобы в неё попали только что введённые команды.
+        """Returns navigation to its initial state after executing the command."""
+        # Pereread the history, so that it includes only the recently entered commands.
         self._history = self._load_history()
 
         self._history_index = len(self._history)

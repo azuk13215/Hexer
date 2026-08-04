@@ -51,6 +51,10 @@ def sysApp(cmd: str):
     })
     save_history(command_history)
 
+    # --- clear: очистить область вывода (обработка на стороне GUI по tag) ---
+    if command == "clear":
+        return ("clear", "", os.getcwd())
+
     # --- tree ---
     if command == "tree":
         start_dir = os.getcwd()

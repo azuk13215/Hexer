@@ -73,7 +73,7 @@ class Hexer:
                 start_time
             )
 
-            # Только CLI выводит print
+            # Only the CLI prints
             print(message)
 
             if tag == "exit":

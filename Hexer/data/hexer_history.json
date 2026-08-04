@@ -6,5 +6,53 @@
     {
         "id": 2,
         "command": "time"
+    },
+    {
+        "id": 3,
+        "command": "time"
+    },
+    {
+        "id": 4,
+        "command": "time"
+    },
+    {
+        "id": 5,
+        "command": "time"
+    },
+    {
+        "id": 6,
+        "command": "\u0444\u0443\u043a\u0440\u0438"
+    },
+    {
+        "id": 7,
+        "command": "tree"
+    },
+    {
+        "id": 8,
+        "command": "clear"
+    },
+    {
+        "id": 9,
+        "command": "exit"
+    },
+    {
+        "id": 10,
+        "command": "\u0448\u043b\u0440\u0430\u043f"
+    },
+    {
+        "id": 11,
+        "command": "time"
+    },
+    {
+        "id": 12,
+        "command": "clear"
+    },
+    {
+        "id": 13,
+        "command": "exit"
+    },
+    {
+        "id": 14,
+        "command": "\u0433\u0449\u043d\u043f\u0433"
     }
 ]
